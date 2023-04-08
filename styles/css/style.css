@@ -247,5 +247,17 @@
 * body main .status-container .status-tasks-container .drop-zone .task-container .task-info button:hover {
   color: #72B3F8;
 }
+* body footer {
+  margin-top: 4rem;
+  width: 100%;
+}
+* body footer div {
+  width: 100%;
+  padding: 30px;
+  background-color: white;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.4352941176);
+  font-size: smaller;
+}
 
 /*# sourceMappingURL=style.css.map */
