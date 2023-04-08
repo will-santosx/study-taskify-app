@@ -132,6 +132,7 @@
             .status-container
                 width: 100%
                 padding: 20px
+                gap: 1rem,
                 display: flex
                 align-items: baseline
                 justify-content: space-around
@@ -154,13 +155,20 @@
                     border-radius: 5px
                     background-color: #F6F8FB
                     padding: 10px
+                    width: 100%
                     gap: 1rem
                     box-shadow: 0 0 5px #0000003e
                     border-top: 3px solid transparent
 
+                    @include mixin.mobile-small
+                        padding: 5px
+
                     .status-title
                         h4
                             font-weight: 600
+
+                            @include mixin.mobile-small
+                                white-space: nowrap
 
                     .on
                         background-color: #d6d6d690
@@ -175,6 +183,9 @@
                         width: 100%
                         transition: 0.15s all ease-in-out
 
+                        @include mixin.mobile-small
+                            padding: 10px
+
                         .dragging-task
                             cursor: move
                             opacity: 0.4
@@ -188,6 +199,9 @@
                             padding: 10px
                             border-radius: 5px
                             background-color: white
+
+                            @include mixin.mobile-small
+                                width: 100%
 
                             .low
                                 background: linear-gradient(-33deg, #b3b3b3 15%, #8a8a8a 100%)
