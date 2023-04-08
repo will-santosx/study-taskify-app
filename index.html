@@ -5,8 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StudyTaskify - Willians Santos</title>
     <link rel="stylesheet" href="styles/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <header>
+      <div class="header-left">
+        <i class="fa-solid fa-list-check"></i>
+      </div>
+      <div class="header-center-right">
+        <div class="header-app-name">
+          <span>StudyTaskify</span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main-title">
+        <h1>Suas tarefas</h1>
+      </div>
+      <div class="new-task-content">
+        <form id="new-task-form" class="new-task-container">
+          <label for="add-new-task">Nova tarefa</label>
+          <div class="new-task">
+            <input id="input-name-new-task" placeholder="Descrição" name="add-new-task" type="text" autocomplete="off" maxlength="22" required>
+            <button id="new-task-button" type="submit">+</button>
+          </div>
+        </form>
+      </div>
+      <div class="status-container">
+
+        <div id="to-do-list" class="status-tasks-container to-do">
+          <div class="status-title">
+            <h4>Não-inciadas</h4>
+          </div>
+
+        </div>
+
+        <div id="progress-list" class="status-tasks-container in-progress">
+          <div class="status-title">
+            <h4>Em progresso</h4>
+          </div>
+        </div>
+
+        <div id="done-list" class="status-tasks-container done">
+          <div class="status-title">
+            <h4>Concluídas</h4>
+          </div>
+        </div>
+
+      </div>
+    </main>
     <script type="module" src="src/index.ts"></script>
   </body>
 </html>

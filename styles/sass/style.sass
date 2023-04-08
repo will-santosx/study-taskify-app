@@ -1,4 +1,179 @@
 @use 'variables'
 @use 'mixin'
 
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-weight: 500
+
+    body
+        width: 100%
+        height: 100%
+        background-color: #EEF2F9
+        font-family: 'Ubuntu', sans-serif
+
+        header
+            width: 100%
+            padding-left: 0
+            display: flex
+            align-items: center
+            color: white
+            border-bottom: 2px solid variables.$tertiary-color
+            background: linear-gradient(90deg, variables.$secondary-color, variables.$primary-color)
+            
+            .header-left
+                width: 5rem
+                height: 35px
+                @include mixin.flex-center
+                background-color: variables.$tertiary-color
+
+            .header-center-right
+                width: 100%
+                padding: 5px 20px
+
+                .header-app-name
+                    display: flex
+                    gap: 1rem
+                    align-items: center
+                    justify-content: flex-end
+        
+        main
+            width: 100%
+            padding: 30px
+            color: variables.$text-color
+
+            .new-task-content
+                width: 100%
+                background-color: #F6F8FB
+                padding: 10px
+                border-radius: 5px
+                margin: 10px 0
+
+                .new-task-container
+                    width: 100%
+                    display: flex
+                    gap: 1rem
+                    align-items: baseline
+                    flex-direction: column
+                    @include mixin.flex-center
+
+                    .new-task
+                        display: flex
+                        align-items: baseline
+                        gap: 1rem
+                        padding: 10px
+                        border-radius: 5px
+                        background-color: #fff
+
+                        input
+                            padding: 8px
+                            border-radius: 5px
+                            border: none
+                            background-color: #F6F8FB
+                            border-radius: 5px
+
+                            &:focus
+                                outline: none
+                                border: 1px solid #648ade
+                
+                    button[type=submit]
+                        @include mixin.flex-center
+                        padding: 7px 10px
+                        cursor: pointer                        
+                        color: #648ade
+                        border: 1px solid #648ade
+                        border-radius: 5px
+                        letter-spacing: 2px
+                        font-size: small
+                        background-color: transparent
+                        transition: 0.35s all ease-in-out
+                        box-shadow: 1px 1px 3px #0000003e
+                        font-size: medium
+
+                        &:hover
+                            border: 1px solid transparent
+                            color: white
+                            background: linear-gradient(33deg, #99ccff 15%, #648ade 100%)
+
+            
+            .status-container
+                width: 100%
+                padding: 20px
+                display: flex
+                align-items: baseline
+                justify-content: space-around
+
+                .to-do
+                    border-image: linear-gradient(90deg, #ababab 15%, #5c5c5c 100%)
+                    border-image-slice: 1
+                
+                .in-progress
+                    border-image: linear-gradient(90deg, #e3ffb0 15%, #f2f84c 100%)
+                    border-image-slice: 1
+
+                .done
+                    border-image: linear-gradient(90deg, #c9b0ff 15%, #714cf8 100%)
+                    border-image-slice: 1
+
+                .status-tasks-container
+                    display: flex
+                    flex-direction: column
+                    border-radius: 5px
+                    background-color: #F6F8FB
+                    padding: 10px
+                    gap: 1rem
+                    box-shadow: 0 0 5px #0000003e
+                    border-top: 3px solid transparent
+
+                    .status-title
+                        h4
+                            font-weight: 600
+
+                    .task-container
+                        display: flex
+                        flex-direction: column
+                        justify-content: flex-start
+                        gap: 1rem
+                        width: 15rem
+                        padding: 10px
+                        border-radius: 5px
+                        background-color: white
+
+                        .low
+                            background: linear-gradient(-33deg, #b3b3b3 15%, #8a8a8a 100%)
+
+                        .mid
+                            background: linear-gradient(-33deg, #99ffcf 15%, #2bed96 100%)
+
+                        .high
+                            background: linear-gradient(-33deg, #ff8282 15%, #f84c4c 100%)
+
+                        .task-priority
+                            text-align: center
+                            padding: 2px
+                            border-radius: 5px
+                            font-size: 12px
+                            color: white
+                        
+                        .task-title
+                            width: 70%
+                            font-size: small
+                            font-weight: 700
+                            color: #282828
+
+                        .task-info
+                            font-size: 10px
+
+                            button
+                                margin: 2px
+                                padding: 5px
+                                background-color: transparent
+                                border: none
+                                cursor: pointer
+                                transition: 0.2s all ease-in-out
+
+                                &:hover
+                                    color: variables.$primary-color 
+
     
