@@ -37,6 +37,20 @@
   align-items: center;
   justify-content: flex-end;
 }
+* body .info-popup {
+  position: fixed;
+  display: none;
+  align-items: center;
+  gap: 1rem;
+  z-index: 999;
+  top: 8%;
+  right: 1%;
+  background-color: #72B3F8;
+  padding: 6px;
+  border-radius: 5px;
+  color: white;
+  border-bottom: solid 3px #838CDB;
+}
 * body main {
   width: 100%;
   padding: 30px;
@@ -77,6 +91,23 @@
 * body main .new-task-content .new-task-container .new-task input:focus {
   outline: none;
   border: 1px solid #648ade;
+}
+* body main .new-task-content .new-task-container .new-task-type {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+* body main .new-task-content .new-task-container .new-task-type span {
+  margin-bottom: 10px;
+}
+* body main .new-task-content .new-task-container .new-task-type .new-task-types {
+  display: flex;
+  gap: 1rem;
+}
+* body main .new-task-content .new-task-container .new-task-type .new-task-types .inputs-type {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 * body main .new-task-content .new-task-container button[type=submit] {
   display: flex;
@@ -131,42 +162,59 @@
 * body main .status-container .status-tasks-container .status-title h4 {
   font-weight: 600;
 }
-* body main .status-container .status-tasks-container .task-container {
+* body main .status-container .status-tasks-container .on {
+  background-color: rgba(214, 214, 214, 0.5647058824);
+  transition: 0.15s all ease-in-out;
+}
+* body main .status-container .status-tasks-container .drop-zone {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 20px;
+  width: 100%;
+  transition: 0.15s all ease-in-out;
+}
+* body main .status-container .status-tasks-container .drop-zone .dragging-task {
+  cursor: move;
+  opacity: 0.4;
+}
+* body main .status-container .status-tasks-container .drop-zone .task-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 1rem;
-  width: 15rem;
+  width: 13rem;
   padding: 10px;
   border-radius: 5px;
   background-color: white;
 }
-* body main .status-container .status-tasks-container .task-container .low {
+* body main .status-container .status-tasks-container .drop-zone .task-container .low {
   background: linear-gradient(-33deg, #b3b3b3 15%, #8a8a8a 100%);
 }
-* body main .status-container .status-tasks-container .task-container .mid {
+* body main .status-container .status-tasks-container .drop-zone .task-container .mid {
   background: linear-gradient(-33deg, #99ffcf 15%, #2bed96 100%);
 }
-* body main .status-container .status-tasks-container .task-container .high {
+* body main .status-container .status-tasks-container .drop-zone .task-container .high {
   background: linear-gradient(-33deg, #ff8282 15%, #f84c4c 100%);
 }
-* body main .status-container .status-tasks-container .task-container .task-priority {
+* body main .status-container .status-tasks-container .drop-zone .task-container .task-priority {
   text-align: center;
   padding: 2px;
   border-radius: 5px;
   font-size: 12px;
   color: white;
 }
-* body main .status-container .status-tasks-container .task-container .task-title {
+* body main .status-container .status-tasks-container .drop-zone .task-container .task-title {
   width: 70%;
   font-size: small;
   font-weight: 700;
   color: #282828;
 }
-* body main .status-container .status-tasks-container .task-container .task-info {
+* body main .status-container .status-tasks-container .drop-zone .task-container .task-info {
   font-size: 10px;
 }
-* body main .status-container .status-tasks-container .task-container .task-info button {
+* body main .status-container .status-tasks-container .drop-zone .task-container .task-info button {
   margin: 2px;
   padding: 5px;
   background-color: transparent;
@@ -174,7 +222,7 @@
   cursor: pointer;
   transition: 0.2s all ease-in-out;
 }
-* body main .status-container .status-tasks-container .task-container .task-info button:hover {
+* body main .status-container .status-tasks-container .drop-zone .task-container .task-info button:hover {
   color: #72B3F8;
 }
 

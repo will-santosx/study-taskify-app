@@ -21,6 +21,12 @@
         </div>
       </div>
     </header>
+    
+    <div class="info-popup">
+      <i class="fa-solid fa-info"></i>
+      <span id="info-message">Notificação</span>
+    </div>
+
     <main>
       <div class="main-title">
         <h1>Suas tarefas</h1>
@@ -29,8 +35,25 @@
         <form id="new-task-form" class="new-task-container">
           <label for="add-new-task">Nova tarefa</label>
           <div class="new-task">
-            <input id="input-name-new-task" placeholder="Descrição" name="add-new-task" type="text" autocomplete="off" maxlength="22" required>
+            <input id="input-name-new-task" placeholder="Nome" name="add-new-task" type="text" autocomplete="off" maxlength="22" required>
             <button id="new-task-button" type="submit">+</button>
+          </div>
+          <div class="new-task-type">
+            <span>Prioridade</span>
+            <div class="new-task-types">
+              <div class="inputs-type">
+                <input data-text="Baixa" class="task-priority-option" id="low-priority" value="low" name="prioritys" type="radio" checked>
+                <label for="low-priority">Baixa</label>
+              </div>
+              <div class="inputs-type">
+                <input data-text="Média" class="task-priority-option" id="mid-priority" value="mid" name="prioritys" type="radio">
+                <label for="mid-priority">Média</label>
+              </div>
+              <div class="inputs-type">
+                <input data-text="Alta" class="task-priority-option" id="high-priority" value="high" name="prioritys" type="radio">
+                <label for="high-priority">Alta</label>
+              </div>
+            </div>
           </div>
         </form>
       </div>
@@ -40,18 +63,23 @@
           <div class="status-title">
             <h4>Não-inciadas</h4>
           </div>
-
+          <div class="drop-zone">
+          </div>
         </div>
 
         <div id="progress-list" class="status-tasks-container in-progress">
           <div class="status-title">
             <h4>Em progresso</h4>
           </div>
+          <div class="drop-zone">
+          </div>
         </div>
 
         <div id="done-list" class="status-tasks-container done">
           <div class="status-title">
             <h4>Concluídas</h4>
+          </div>
+          <div class="drop-zone">
           </div>
         </div>
 

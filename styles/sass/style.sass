@@ -37,6 +37,21 @@
                     gap: 1rem
                     align-items: center
                     justify-content: flex-end
+    
+        .info-popup
+            position: fixed
+            display: none
+            align-items: center
+            gap: 1rem
+            z-index: 999
+            top: 8%
+            right: 1%
+            background-color: variables.$primary-color
+            padding: 6px
+            border-radius: 5px
+            color: white
+            border-bottom: solid 3px variables.$tertiary-color
+
         
         main
             width: 100%
@@ -76,6 +91,23 @@
                             &:focus
                                 outline: none
                                 border: 1px solid #648ade
+
+                    .new-task-type
+                        display: flex
+                        flex-direction: column
+                        text-align: center
+                        
+                        span
+                            margin-bottom: 10px
+
+                        .new-task-types
+                            display: flex
+                            gap: 1rem
+
+                            .inputs-type
+                                display: flex
+                                align-items: center
+                                gap: 5px
                 
                     button[type=submit]
                         @include mixin.flex-center
@@ -130,50 +162,67 @@
                         h4
                             font-weight: 600
 
-                    .task-container
+                    .on
+                        background-color: #d6d6d690
+                        transition: 0.15s all ease-in-out
+
+                    .drop-zone
                         display: flex
-                        flex-direction: column
-                        justify-content: flex-start
                         gap: 1rem
-                        width: 15rem
-                        padding: 10px
+                        flex-direction: column
                         border-radius: 5px
-                        background-color: white
+                        padding: 20px
+                        width: 100%
+                        transition: 0.15s all ease-in-out
 
-                        .low
-                            background: linear-gradient(-33deg, #b3b3b3 15%, #8a8a8a 100%)
+                        .dragging-task
+                            cursor: move
+                            opacity: 0.4
 
-                        .mid
-                            background: linear-gradient(-33deg, #99ffcf 15%, #2bed96 100%)
-
-                        .high
-                            background: linear-gradient(-33deg, #ff8282 15%, #f84c4c 100%)
-
-                        .task-priority
-                            text-align: center
-                            padding: 2px
+                        .task-container
+                            display: flex
+                            flex-direction: column
+                            justify-content: flex-start
+                            gap: 1rem
+                            width: 13rem
+                            padding: 10px
                             border-radius: 5px
-                            font-size: 12px
-                            color: white
-                        
-                        .task-title
-                            width: 70%
-                            font-size: small
-                            font-weight: 700
-                            color: #282828
+                            background-color: white
 
-                        .task-info
-                            font-size: 10px
+                            .low
+                                background: linear-gradient(-33deg, #b3b3b3 15%, #8a8a8a 100%)
 
-                            button
-                                margin: 2px
-                                padding: 5px
-                                background-color: transparent
-                                border: none
-                                cursor: pointer
-                                transition: 0.2s all ease-in-out
+                            .mid
+                                background: linear-gradient(-33deg, #99ffcf 15%, #2bed96 100%)
 
-                                &:hover
-                                    color: variables.$primary-color 
+                            .high
+                                background: linear-gradient(-33deg, #ff8282 15%, #f84c4c 100%)
+
+                            .task-priority
+                                text-align: center
+                                padding: 2px
+                                border-radius: 5px
+                                font-size: 12px
+                                color: white
+                            
+                            .task-title
+                                width: 70%
+                                font-size: small
+                                font-weight: 700
+                                color: #282828
+
+                            .task-info
+                                font-size: 10px
+
+                                button
+                                    margin: 2px
+                                    padding: 5px
+                                    background-color: transparent
+                                    border: none
+                                    cursor: pointer
+                                    transition: 0.2s all ease-in-out
+
+                                    &:hover
+                                        color: variables.$primary-color 
 
     
